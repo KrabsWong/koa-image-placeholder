@@ -1,0 +1,32 @@
+{
+    "name": "koa-image-placeholder",
+    "description": "简单的koa模块, 生成占位图.",
+    "version": "0.0.1",
+    "author": "yPangXie <pangxie.wdy@gmail.com>",
+    "engines": {
+        "node": ">=0.12"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yPangXie/koa-image-placeholder.git",
+        "web": "https://github.com/yPangXie/koa-image-placeholder.git"
+    },
+    "dependencies": {
+        "debug": "~2.1.1"
+    },
+    "devDependencies": {
+        "koa": "~0.14.0",
+        "koa-router": "~3.8.0"
+    },
+    "bugs": {
+        "url": "https://github.com/yPangXie/koa-image-placeholder/issues",
+        "email": "pangxie.wdy@gmail.com"
+    },
+    "keywords": [
+        "koa-image-placeholder",
+        "koa",
+        "image",
+        "placeholder"
+    ]
+}
