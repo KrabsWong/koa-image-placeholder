@@ -33,7 +33,7 @@ module.exports = function(options) {
         debug('query: %o', queryObj);
 
         let size = queryObj.size ? queryObj.size.split('x') : [];
-        svgObj.text = decodeURIComponent(queryObj.text) || '';
+        svgObj.text = queryObj.text ? decodeURIComponent(queryObj.text) : '';
         if(size.length != 2) {
             return yield next;
         }

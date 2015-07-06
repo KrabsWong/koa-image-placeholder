@@ -1,7 +1,7 @@
 {
     "name": "koa-image-placeholder",
     "description": "简单的koa模块, 生成占位图.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "yPangXie <pangxie.wdy@gmail.com>",
     "engines": {
         "node": ">=0.12"
