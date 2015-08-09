@@ -33,7 +33,12 @@ module.exports = function(options) {
         debug('query: %o', queryObj);
 
         let size = queryObj.size ? queryObj.size.split('x') : [];
-        svgObj.text = queryObj.text ? decodeURIComponent(queryObj.text) : '';
+        try {
+            svgObj.text = queryObj.text ? decodeURIComponent(queryObj.text) : '';
+        } catch(e) {
+            svgObj.text = queryObj.text;
+        }
+
         if(size.length != 2) {
             return yield next;
         }
