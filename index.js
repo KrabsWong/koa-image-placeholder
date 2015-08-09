@@ -36,7 +36,7 @@ module.exports = function(options) {
         try {
             svgObj.text = queryObj.text ? decodeURIComponent(queryObj.text) : '';
         } catch(e) {
-            svgObj.text = queryObj.text;
+            svgObj.text = queryObj.text || '';
         }
 
         if(size.length != 2) {
