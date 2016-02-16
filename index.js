@@ -32,12 +32,16 @@ module.exports = function(options) {
         let queryObj = qs.parse(parsedURL.query || "");
         debug('query: %o', queryObj);
 
+        /* 根据query中的数据, 重置配置信息 */
         let size = queryObj.size ? queryObj.size.split('x') : [];
         try {
             svgObj.text = queryObj.text ? decodeURIComponent(queryObj.text) : '';
         } catch(e) {
             svgObj.text = queryObj.text || '';
         }
+
+        svgObj.rectColor = queryObj.bg && /[A-F0-9]/.test(queryObj.bg) ? '#' + queryObj.bg : svgObj.rectColor;
+        svgObj.fontColor = queryObj.fc && /[A-F0-9]/.test(queryObj.fc) ? '#' + queryObj.fc : svgObj.fontColor;
 
         if(size.length != 2) {
             return yield next;

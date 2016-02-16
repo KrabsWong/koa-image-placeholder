@@ -26,12 +26,14 @@ npm install koa-image-placeholder --save
 
 注册一个路由来响应中间件的占位图返回值(参照下方的示例代码).
 
-`url`的`query`接收两个参数
+`url`的`query`接收四个参数
 
  - `size`(必须): 图片尺寸, 格式`widthxheight`(100x100).
  - `text`(可选): 图片上展示的文字
+ - `bg`(可选): 图片背景色, `aabbcc`格式, 不带#
+ - `fc`(可选): 图片上展示的文字颜色, `aabbcc`格式, 不带#
 
-例: `/placeholder?size=200x200&text=hello`
+例: `/placeholder?size=200x200&text=妈个蛋&bg=000&fc=FFF`
 
 ## 示例代码
 
@@ -53,7 +55,7 @@ app.get('/placeholder', imagePlaceholder({
 }));
 
 app.get('/home', function *() {
-    this.body = '<h1>Home</h1><img src="/placeholder?size=300x300&text=hello home" />'
+    this.body = '<h1>Home</h1><img src="/placeholder?size=300x300&text=妈个蛋&bg=000&fc=FFF" />'
 });
 
 app.listen(8080);
