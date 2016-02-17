@@ -10,17 +10,10 @@ npm install koa-image-placeholder --save
 
 ## 参数说明
 
-### rectColor {String}
-
-图片背景色(默认: `#EEEEEE`)
-
-### fontSize {String}
-
-字体大小(默认: `12`)
-
-### fontColor {String}
-
-字体颜色(默认: `#AAAAAA`)
+ - `rectColor`: 图片背景色(默认: `#EEEEEE`)
+ - `fontSize`:  字体大小(默认: `12`)
+ - `fontColor`: 字体颜色(默认: `#AAAAAA`)
+ - `io`: 是否只展示占位图, 不展示任何其他的信息(默认: `n`)
 
 ## URL配置
 
@@ -32,6 +25,7 @@ npm install koa-image-placeholder --save
  - `text`(可选): 图片上展示的文字
  - `bg`(可选): 图片背景色, `aabbcc`格式, 不带#
  - `fc`(可选): 图片上展示的文字颜色, `aabbcc`格式, 不带#
+ - `io`(可选): `image only`, 若设置为`y`, 则文字以及尺寸信息将不再展示, fc设置也将无效, 只展示一个纯色的占位图(默认不包含该参数)
 
 例: `/placeholder?size=200x200&text=妈个蛋&bg=000&fc=FFF`
 
