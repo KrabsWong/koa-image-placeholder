@@ -32,7 +32,7 @@ module.exports = function(options) {
         let parsedURL = url.parse(this.url);
         let queryObj = qs.parse(parsedURL.query || "");
         debug('query: %o', queryObj);
-        
+
         /* 根据query中的数据, 重置配置信息 */
         let size = queryObj.size ? queryObj.size.split('x') : [];
         if(size.length != 2) {
@@ -44,8 +44,8 @@ module.exports = function(options) {
         } catch(e) {
             svgObj.text = queryObj.text || '';
         }
-        svgObj.rectColor = queryObj.bg && /[A-F0-9]/.test(queryObj.bg) ? '#' + queryObj.bg : svgObj.rectColor;
-        svgObj.fontColor = queryObj.fc && /[A-F0-9]/.test(queryObj.fc) ? '#' + queryObj.fc : svgObj.fontColor;
+        svgObj.rectColor = (queryObj.bg && /[A-F0-9]/i.test(queryObj.bg) ? '#' + queryObj.bg : svgObj.rectColor).toUpperCase();
+        svgObj.fontColor = (queryObj.fc && /[A-F0-9]/i.test(queryObj.fc) ? '#' + queryObj.fc : svgObj.fontColor).toUpperCase();
         svgObj.width = size[0];
         svgObj.height = size[1];
         svgObj.size = svgObj.width + 'x' + svgObj.height;
@@ -58,7 +58,7 @@ module.exports = function(options) {
             svgObj.size = "";
         }
         debug("svg config: %o", svgObj);
-        
+
         this.type = 'image/svg+xml';
         this.body = svg.replace(/\{.*?\}/g, function(matched) {
             let key = matched.replace(/[\{\}]/g, '');
